@@ -12,6 +12,7 @@
 		4010AFBB22F8C93000CF73C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFB922F8C93000CF73C6 /* Main.storyboard */; };
 		4010AFBD22F8C93C00CF73C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */; };
 		4010AFC022F8C93C00CF73C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */; };
+		4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4010AFBF22F8C93C00CF73C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4010AFC122F8C93C00CF73C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsIndexTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		4010AFB422F8C93000CF73C6 /* HearthstoneCardView */ = {
 			isa = PBXGroup;
 			children = (
+				4010AFC722F8CAB500CF73C6 /* Services */,
 				4010AFB522F8C93000CF73C6 /* AppDelegate.swift */,
 				4010AFB722F8C93000CF73C6 /* ViewController.swift */,
 				4010AFB922F8C93000CF73C6 /* Main.storyboard */,
 				4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */,
 				4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */,
 				4010AFC122F8C93C00CF73C6 /* Info.plist */,
+				4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */,
 			);
 			path = HearthstoneCardView;
+			sourceTree = "<group>";
+		};
+		4010AFC722F8CAB500CF73C6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			files = (
 				4010AFB822F8C93000CF73C6 /* ViewController.swift in Sources */,
 				4010AFB622F8C93000CF73C6 /* AppDelegate.swift in Sources */,
+				4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
