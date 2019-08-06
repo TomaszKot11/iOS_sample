@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class CardTableViewCell : UITableViewCell {
-    
     @IBOutlet weak var manaImageView: UIImageView!
     @IBOutlet weak var nameTextView: UITextField!
     @IBOutlet weak var classTextView: UITextField!
