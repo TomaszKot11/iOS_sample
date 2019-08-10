@@ -20,7 +20,7 @@ class CardsIndexTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        fetchMetadata()
+        //fetchMetadata()
 //        fetchFromApi()
 //        tableView.reloadData()
     }
@@ -73,7 +73,6 @@ class CardsIndexTableViewController: UITableViewController {
         
         
     }
-    
     
     func fetchFromApi() {
         // ?pageSize=20

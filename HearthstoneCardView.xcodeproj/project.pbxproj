@@ -16,6 +16,7 @@
 		4010AFCB22F8E97500CF73C6 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFCA22F8E97500CF73C6 /* CardTableViewCell.swift */; };
 		406E726322FABC1800B8D775 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726222FABC1800B8D775 /* Card.swift */; };
 		406E726522FABF1200B8D775 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726422FABF1200B8D775 /* Metadata.swift */; };
+		406FF9F922FF198D0059A802 /* MetdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FF9F822FF198D0059A802 /* MetdataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4010AFCA22F8E97500CF73C6 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		406E726222FABC1800B8D775 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		406E726422FABF1200B8D775 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		406FF9F822FF198D0059A802 /* MetdataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetdataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,8 @@
 		4010AFB422F8C93000CF73C6 /* HearthstoneCardView */ = {
 			isa = PBXGroup;
 			children = (
+				406E726222FABC1800B8D775 /* Card.swift */,
+				406FF9F722FF16C00059A802 /* Models */,
 				4010AFC722F8CAB500CF73C6 /* Services */,
 				4010AFB522F8C93000CF73C6 /* AppDelegate.swift */,
 				4010AFB722F8C93000CF73C6 /* ViewController.swift */,
@@ -71,8 +75,6 @@
 				4010AFC122F8C93C00CF73C6 /* Info.plist */,
 				4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */,
 				4010AFCA22F8E97500CF73C6 /* CardTableViewCell.swift */,
-				406E726222FABC1800B8D775 /* Card.swift */,
-				406E726422FABF1200B8D775 /* Metadata.swift */,
 			);
 			path = HearthstoneCardView;
 			sourceTree = "<group>";
@@ -80,8 +82,17 @@
 		4010AFC722F8CAB500CF73C6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				406FF9F822FF198D0059A802 /* MetdataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		406FF9F722FF16C00059A802 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				406E726422FABF1200B8D775 /* Metadata.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 				4010AFB822F8C93000CF73C6 /* ViewController.swift in Sources */,
 				4010AFB622F8C93000CF73C6 /* AppDelegate.swift in Sources */,
 				406E726322FABC1800B8D775 /* Card.swift in Sources */,
+				406FF9F922FF198D0059A802 /* MetdataService.swift in Sources */,
 				4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */,
 				406E726522FABF1200B8D775 /* Metadata.swift in Sources */,
 				4010AFCB22F8E97500CF73C6 /* CardTableViewCell.swift in Sources */,
