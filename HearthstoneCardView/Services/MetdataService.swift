@@ -13,10 +13,10 @@ class MetadataService {
      public static var metadata: Metadata?
     
     
-    public static func getRarityNameFor(id classId: Int) -> String? {
+    public static func getRarityNameFor(id rarityId: Int) -> String? {
         if let rarities = metadata?.rarities {
             
-            let rarity: Rarity? = rarities.first(where: { $0.id == classId })
+            let rarity: Rarity? = rarities.first(where: { $0.id == rarityId })
            
             return rarity?.name["pl_PL"]
         }
@@ -24,9 +24,14 @@ class MetadataService {
         return nil
     }
     
-    public static func getClassNameFor(id classId: Int) -> String {
+    public static func getClassNameFor(id classId: String) -> String? {
+        if let cardClasses = metadata?.classes {
+            let cardClass: CardClass? = cardClasses.first(where: { $0.id == classId })
+            
+            return cardClass?.name["pl_PL"]
+        }
         
-        return ""
+        return nil
     }
     
     public static func queryApiForMetadata() {
