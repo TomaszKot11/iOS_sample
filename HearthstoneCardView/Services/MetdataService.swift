@@ -13,11 +13,19 @@ class MetadataService {
      public static var metadata: Metadata?
     
     
-    public static func getRarityNameFor(id classId: Int) -> String {
-        return ""
+    public static func getRarityNameFor(id classId: Int) -> String? {
+        if let rarities = metadata?.rarities {
+            
+            let rarity: Rarity? = rarities.first(where: { $0.id == classId })
+           
+            return rarity?.name["pl_PL"]
+        }
+        
+        return nil
     }
     
     public static func getClassNameFor(id classId: Int) -> String {
+        
         return ""
     }
     
@@ -25,7 +33,7 @@ class MetadataService {
         var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/metadata")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
-        request.addValue("Bearer USko771Gzrjsq65zMVoKX7Tfht8Xi3EWFv", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
     
         //TODO: handle parsing exceptions?
@@ -37,7 +45,7 @@ class MetadataService {
                 let metadata = try JSONDecoder().decode(Metadata.self, from: data!)
     
                 MetadataService.metadata = metadata
-                print(metadata.classes.first)
+                
             } catch let jsonErr {
                 print("Error occured while parsing the JSON response:")
                 print(jsonErr)

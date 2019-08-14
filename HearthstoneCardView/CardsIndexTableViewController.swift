@@ -51,7 +51,7 @@ class CardsIndexTableViewController: UITableViewController {
         var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/metadata")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
-        request.addValue("Bearer USko771Gzrjsq65zMVoKX7Tfht8Xi3EWFv", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         
         //TODO: handle parsing exceptions?
@@ -81,7 +81,7 @@ class CardsIndexTableViewController: UITableViewController {
         var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=20&page=\(pageNumber)")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
-        request.addValue("Bearer USko771Gzrjsq65zMVoKX7Tfht8Xi3EWFv", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         
         //TODO: handle parsing exceptions?
