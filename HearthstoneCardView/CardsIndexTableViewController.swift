@@ -13,132 +13,80 @@ import CoreData
 
 class CardsIndexTableViewController: UITableViewController {
     
-    var fetchedDictionary: Dictionary<String, String> = [:]
-    var totalItems: Int = 0
+    var cards: [Card] = []
+    var cardPages: [CardsPage] = []
+    var totalItems: Int {
+        get {
+            return cards.count
+        }
+    }
     let customPageSize: Int = 20
     
     override func viewDidLoad() {
+
+//    print("viewDidLoad")
+        fetchFromApi()
+//        self.tableView.delegate = self
         super.viewDidLoad()
-    
-        //fetchMetadata()
-//        fetchFromApi()
-//        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        print("witam")
+    
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // check pagination
-        if indexPath.row == fetchedDictionary.count - 1 {
-            if totalItems > fetchedDictionary.count {
-                fetchFromApi()
-                totalItems += customPageSize
-                tableView.reloadData()
-            }
+        if indexPath.row == totalItems - 1 {
+            fetchFromApi()
+        }
+//        print("lecimy dalej kochani")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCellID")
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CardTableViewCellID")
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell", for: indexPath)
-        
-
-        return cell
+        cell!.textLabel?.text = "\(indexPath.row) : \(self.cards[indexPath.row].name["pl_PL"]!)"
+    
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cards.count
     }
     
     
-    public func fetchMetadata() {
-        
-        var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/metadata")
-        var request = URLRequest(url: apiUrlAllCards!)
-        request.httpMethod = "GET"
-        request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
-        let session = URLSession.shared
-        
-        //TODO: handle parsing exceptions?
-        //TODO: use codable?
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            do {
-                // HTTP 200 status
-                //TODO: parse data
-                let metadata = try JSONDecoder().decode(Metadata.self, from: data!)
-                
-                print(metadata.classes.first)
-            } catch let jsonErr {
-                print("Error occured while parsing the JSON response:")
-                print(jsonErr)
-            }
-        })
-        
-        task.resume()
-        
-        
-    }
-    
-    func fetchFromApi() {
-        // ?pageSize=20
+    func fetchFromApi(isInitialFetch: Bool = false) {
         var pageNumber = (totalItems / customPageSize) + 1
         
-        var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=20&page=\(pageNumber)")
+        var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
         request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         
-        //TODO: handle parsing exceptions?
-        //TODO: use codable?
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
-                let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
                 
-               let cards = json["cards"] as! [Any]
+            let jsonOne = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
                 
-                for (index, card) in cards.enumerated() {
-                    if index == 0 {
-//                        print(card)
-                        let jsonDict = card as! Dictionary<String, Any>
-//                        print(jsonDict["artistName"])
-
-                        let nameDict = jsonDict["name"] as! Dictionary<String, Any>
-//                        print(nameDict["pl_PL"])
-//                        print(jsonDict["classId"])
-//                        print(jsonDict["rarityId"])
-//                        print(jsonDict["manaCost"])
-
-//                        print(jsonDict["name"]["pl_PL"])
-//                        print(jsonDict["name"]["pl_PL"])
-//                        print(jsonDict["name"]["pl_PL"])
-//                        print(jsonDict["name"]["pl_PL"])
-
-                    }
-                    
-//                    let decoder = JSONDecoder()
-//                    do {
-//                        let decodedCard = try decoder.decode(Card.self, from: card as! Data)
-//                        print(decodedCard)
-//                    } catch let error {
-//                        print(error)
-//                    }
-                    
+             let cardPage = try JSONDecoder().decode(CardsPage.self, from: data!)
+                //TODO: think over this solution - is it good
+                DispatchQueue.main.async {
+                    self.cardPages.append(cardPage)
+                    self.cards.append(contentsOf: cardPage.cards)
+                    self.tableView.reloadData()
                 }
-                
-                //print(json["page"])
-               // print(json["cards"])
-               // print(json["cards"])
-//                for data in json["cards"] as! Dictionary<String, Any> {
-//                    print("-------")
-//                    print(data)
-//                    print("-------")
-//                }
-                
-            } catch {
+            } catch let err {
+                print(err)
+                print(err.localizedDescription)
                 print("error")
             }
         })
         
         task.resume()
-        
-        
-        
-//        tableView.reloadData()
     }
 }
