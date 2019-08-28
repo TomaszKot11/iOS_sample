@@ -38,6 +38,7 @@ class CustomTableViewCell: UITableViewCell {
     let manaLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
+         label.font = UIFont(name: "Helvetica-Bold", size: 30.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -96,12 +97,9 @@ class CustomTableViewCell: UITableViewCell {
 
     
     private func addConstraints() {
-//        self.heightAnchor.constraint(equalTo: mainStackView.heightAnchor)
-//        classImageView.leftAnchor.constraint(equalTo: mainStackView.leftAnchor, constant: 18)
-//        classImageView.topAnchor.constraint(equalTo: mainStackView.topAnchor)
-//        classImageView.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor)
-//        self.contentView.heightAnchor.constraint(equalToConstant: 300)
-//        classImageView.heightAnchor.constraint(equalTo:  self.contentView.heightAnchor)
-        
+        NSLayoutConstraint.activate([
+            manaLabel.centerXAnchor.constraint(equalTo: classImageView.centerXAnchor),
+            manaLabel.centerYAnchor.constraint(equalTo: classImageView.centerYAnchor)
+        ])
     }
 }
