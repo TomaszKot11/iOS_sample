@@ -35,12 +35,37 @@ class CustomTableViewCell: UITableViewCell {
         return imageView
     }()
     
-//    let
+    let manaLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Helvetica", size: 15.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
+    let classLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Helvetica", size: 12.0)
+        return label
+    }()
+    
+    let rarityLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Helvetica", size: 10.0)
+        return label
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.translatesAutoresizingMaskIntoConstraints = false // do we need this here?
-//        self.heightAnchor.constraint(equalToConstant: 300)
         addSubviews()
         addConstraints()
     }
@@ -57,7 +82,16 @@ class CustomTableViewCell: UITableViewCell {
         mainStackView.addArrangedSubview(classImageView)
         mainStackView.addArrangedSubview(detailsStackView)
         
-        detailsStackView.addArrangedSubview(classImageView)
+            classImageView.addSubview(manaLabel)
+        
+        detailsStackView.addArrangedSubview(nameLabel)
+        detailsStackView.addArrangedSubview(classLabel)
+        detailsStackView.addArrangedSubview(rarityLabel)
+        
+        nameLabel.text = "123"
+        classLabel.text = "123"
+        rarityLabel.text = "123"
+        manaLabel.text = "5"
     }
 
     
@@ -68,5 +102,6 @@ class CustomTableViewCell: UITableViewCell {
 //        classImageView.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor)
 //        self.contentView.heightAnchor.constraint(equalToConstant: 300)
 //        classImageView.heightAnchor.constraint(equalTo:  self.contentView.heightAnchor)
+        
     }
 }
