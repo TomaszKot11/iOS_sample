@@ -38,7 +38,7 @@ class MetadataService {
         var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/metadata")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
-        request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer USaKUzz15BIXKWUXuylHrEOTUoPVoJBS5C", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
     
         //TODO: handle parsing exceptions?

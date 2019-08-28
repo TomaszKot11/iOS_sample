@@ -23,10 +23,8 @@ class CardsIndexTableViewController: UITableViewController {
     let customPageSize: Int = 20
     
     override func viewDidLoad() {
-
-//    print("viewDidLoad")
+        // initial fetch from API
         fetchFromApi()
-//        self.tableView.delegate = self
         super.viewDidLoad()
     }
     
@@ -35,15 +33,12 @@ class CardsIndexTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        print("witam")
-    
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == totalItems - 1 {
             fetchFromApi()
         }
-//        print("lecimy dalej kochani")
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCellID")
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CardTableViewCellID")
@@ -65,7 +60,7 @@ class CardsIndexTableViewController: UITableViewController {
         var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
-        request.addValue("Bearer USsj8pGvXFGcVo3OWKaWQY6WaaQ5Bmcg6r", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer USaKUzz15BIXKWUXuylHrEOTUoPVoJBS5C", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
