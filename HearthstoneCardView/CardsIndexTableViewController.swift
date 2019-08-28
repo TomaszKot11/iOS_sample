@@ -39,10 +39,12 @@ class CardsIndexTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell") as? CustomTableViewCell
         if cell == nil {
-            cell = CustomTableViewCell(style: .subtitle, reuseIdentifier: "CardTableViewCell")
+            cell = CustomTableViewCell(style: .default, reuseIdentifier: "CardTableViewCell")
         }
+        
+        cell!.feedWithCard(card: cards[indexPath.row])
         
         return cell!
     }

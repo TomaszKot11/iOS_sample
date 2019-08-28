@@ -19,7 +19,7 @@ class CustomTableViewCell: UITableViewCell {
     
     let detailsStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.spacing = 4
+        stackView.spacing = 2
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -75,6 +75,14 @@ class CustomTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func feedWithCard(card: Card) {
+        if let manaCost = card.manaCost {
+            manaLabel.text = "\(manaCost)"
+        }
+        nameLabel.text = card.name["pl_PL"]
+        classLabel.text = card.classId
+        rarityLabel.text = "\(card.cardTypeId)"
+    }
     
     //MARK: private methods
     
@@ -88,11 +96,6 @@ class CustomTableViewCell: UITableViewCell {
         detailsStackView.addArrangedSubview(nameLabel)
         detailsStackView.addArrangedSubview(classLabel)
         detailsStackView.addArrangedSubview(rarityLabel)
-        
-        nameLabel.text = "123"
-        classLabel.text = "123"
-        rarityLabel.text = "123"
-        manaLabel.text = "5"
     }
 
     
