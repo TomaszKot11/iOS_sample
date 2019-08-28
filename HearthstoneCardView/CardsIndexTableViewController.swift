@@ -39,16 +39,18 @@ class CardsIndexTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCellID")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell")
         if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CardTableViewCellID")
+            cell = CustomTableViewCell(style: .subtitle, reuseIdentifier: "CardTableViewCell")
         }
         
-        cell!.textLabel?.text = "\(indexPath.row) : \(self.cards[indexPath.row].name["pl_PL"]!)"
-    
         return cell!
     }
-    
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
     }
