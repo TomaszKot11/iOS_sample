@@ -43,7 +43,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="iaF-Rb-gxO" kind="show" id="orQ-vo-dBQ"/>
+                                    <segue destination="Wdv-QN-FHQ" kind="show" identifier="CardDetailsSegue" id="NSD-yQ-Iiy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,30 +58,20 @@
             </objects>
             <point key="canvasLocation" x="709.60000000000002" y="-33.733133433283363"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QNb-Qr-QVA">
+        <!--Card Details View Controller-->
+        <scene sceneID="NtT-ro-KSX">
             <objects>
-                <viewController id="iaF-Rb-gxO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uIn-Az-6wy">
+                <viewController id="Wdv-QN-FHQ" customClass="CardDetailsViewController" customModule="HearthstoneCardView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ls9-7a-kku">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="caO-ko-zQM">
-                                <rect key="frame" x="67" y="253" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jaT-gO-jcF"/>
+                        <viewLayoutGuide key="safeArea" id="W6Y-28-Umr"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eoi-iQ-LGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWY-WV-lA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="-32"/>
+            <point key="canvasLocation" x="1444" y="-45"/>
         </scene>
     </scenes>
 </document>

@@ -13,11 +13,11 @@
 		4010AFBD22F8C93C00CF73C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */; };
 		4010AFC022F8C93C00CF73C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */; };
 		4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */; };
-		4010AFCB22F8E97500CF73C6 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFCA22F8E97500CF73C6 /* CardTableViewCell.swift */; };
 		4026CEEC2316A0870060C026 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */; };
 		406E726322FABC1800B8D775 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726222FABC1800B8D775 /* Card.swift */; };
 		406E726522FABF1200B8D775 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726422FABF1200B8D775 /* Metadata.swift */; };
 		406FF9F922FF198D0059A802 /* MetdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FF9F822FF198D0059A802 /* MetdataService.swift */; };
+		4082C49B231A7DD9004D7799 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082C49A231A7DD9004D7799 /* CardDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		4010AFBF22F8C93C00CF73C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4010AFC122F8C93C00CF73C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsIndexTableViewController.swift; sourceTree = "<group>"; };
-		4010AFCA22F8E97500CF73C6 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		406E726222FABC1800B8D775 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		406E726422FABF1200B8D775 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		406FF9F822FF198D0059A802 /* MetdataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetdataService.swift; sourceTree = "<group>"; };
+		4082C49A231A7DD9004D7799 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +66,8 @@
 		4010AFB422F8C93000CF73C6 /* HearthstoneCardView */ = {
 			isa = PBXGroup;
 			children = (
+				4082C49C231A7DF7004D7799 /* StoryboardViewControllers */,
 				4026CEE923169EBB0060C026 /* Views */,
-				406E726222FABC1800B8D775 /* Card.swift */,
 				406FF9F722FF16C00059A802 /* Models */,
 				4010AFC722F8CAB500CF73C6 /* Services */,
 				4010AFB522F8C93000CF73C6 /* AppDelegate.swift */,
@@ -76,8 +76,6 @@
 				4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */,
 				4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */,
 				4010AFC122F8C93C00CF73C6 /* Info.plist */,
-				4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */,
-				4010AFCA22F8E97500CF73C6 /* CardTableViewCell.swift */,
 			);
 			path = HearthstoneCardView;
 			sourceTree = "<group>";
@@ -101,9 +99,19 @@
 		406FF9F722FF16C00059A802 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				406E726222FABC1800B8D775 /* Card.swift */,
 				406E726422FABF1200B8D775 /* Metadata.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4082C49C231A7DF7004D7799 /* StoryboardViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */,
+				4082C49A231A7DD9004D7799 /* CardDetailsViewController.swift */,
+			);
+			path = StoryboardViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +191,8 @@
 				406E726322FABC1800B8D775 /* Card.swift in Sources */,
 				406FF9F922FF198D0059A802 /* MetdataService.swift in Sources */,
 				4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */,
+				4082C49B231A7DD9004D7799 /* CardDetailsViewController.swift in Sources */,
 				406E726522FABF1200B8D775 /* Metadata.swift in Sources */,
-				4010AFCB22F8E97500CF73C6 /* CardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

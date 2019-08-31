@@ -15,6 +15,7 @@ class CardsIndexTableViewController: UITableViewController {
     
     var cards: [Card] = []
     var cardPages: [CardsPage] = []
+    var selectedCard: Card?
     var totalItems: Int {
         get {
             return cards.count
@@ -57,6 +58,21 @@ class CardsIndexTableViewController: UITableViewController {
         return cards.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.selectedCard = self.cards[indexPath.row]
+        
+        performSegue(withIdentifier: "CardDetailsSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CardDetailsSegue" {
+            if let vc = segue.destination as? CardDetailsViewController {
+                vc.card = selectedCard
+            }
+        }
+    }
+    
     
     func fetchFromApi(isInitialFetch: Bool = false) {
         var pageNumber = (totalItems / customPageSize) + 1
@@ -64,7 +80,7 @@ class CardsIndexTableViewController: UITableViewController {
         var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
-        request.addValue("Bearer USaKUzz15BIXKWUXuylHrEOTUoPVoJBS5C", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer USb9M27894qSS1h81NmzDsW9wKE7ckq11H", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
