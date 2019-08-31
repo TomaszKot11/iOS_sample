@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4010AFB622F8C93000CF73C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFB522F8C93000CF73C6 /* AppDelegate.swift */; };
-		4010AFB822F8C93000CF73C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFB722F8C93000CF73C6 /* ViewController.swift */; };
 		4010AFBB22F8C93000CF73C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFB922F8C93000CF73C6 /* Main.storyboard */; };
 		4010AFBD22F8C93C00CF73C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */; };
 		4010AFC022F8C93C00CF73C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */; };
 		4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */; };
 		4026CEEC2316A0870060C026 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */; };
+		402ECA05231AC7D6006A473A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402ECA04231AC7D6006A473A /* NetworkManager.swift */; };
+		402ECA07231AC9D0006A473A /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402ECA06231AC9D0006A473A /* NetworkConstants.swift */; };
 		40698368231A9C5400E1DA51 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40698367231A9C5400E1DA51 /* UIImageView.swift */; };
 		406E726322FABC1800B8D775 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726222FABC1800B8D775 /* Card.swift */; };
 		406E726522FABF1200B8D775 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726422FABF1200B8D775 /* Metadata.swift */; };
@@ -24,13 +25,14 @@
 /* Begin PBXFileReference section */
 		4010AFB222F8C93000CF73C6 /* HearthstoneCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthstoneCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4010AFB522F8C93000CF73C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4010AFB722F8C93000CF73C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4010AFBA22F8C93000CF73C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4010AFBF22F8C93C00CF73C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4010AFC122F8C93C00CF73C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsIndexTableViewController.swift; sourceTree = "<group>"; };
 		4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		402ECA04231AC7D6006A473A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		402ECA06231AC9D0006A473A /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		40698367231A9C5400E1DA51 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		406E726222FABC1800B8D775 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		406E726422FABF1200B8D775 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -75,7 +77,6 @@
 				406FF9F722FF16C00059A802 /* Models */,
 				4010AFC722F8CAB500CF73C6 /* Services */,
 				4010AFB522F8C93000CF73C6 /* AppDelegate.swift */,
-				4010AFB722F8C93000CF73C6 /* ViewController.swift */,
 				4010AFB922F8C93000CF73C6 /* Main.storyboard */,
 				4010AFBC22F8C93C00CF73C6 /* Assets.xcassets */,
 				4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */,
@@ -103,6 +104,8 @@
 		402ECA03231AC4C6006A473A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				402ECA04231AC7D6006A473A /* NetworkManager.swift */,
+				402ECA06231AC9D0006A473A /* NetworkConstants.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -204,8 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4010AFB822F8C93000CF73C6 /* ViewController.swift in Sources */,
 				40698368231A9C5400E1DA51 /* UIImageView.swift in Sources */,
+				402ECA07231AC9D0006A473A /* NetworkConstants.swift in Sources */,
+				402ECA05231AC7D6006A473A /* NetworkManager.swift in Sources */,
 				4010AFB622F8C93000CF73C6 /* AppDelegate.swift in Sources */,
 				4026CEEC2316A0870060C026 /* CustomTableViewCell.swift in Sources */,
 				406E726322FABC1800B8D775 /* Card.swift in Sources */,

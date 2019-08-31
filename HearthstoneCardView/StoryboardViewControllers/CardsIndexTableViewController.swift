@@ -8,11 +8,8 @@
 
 import Foundation
 import UIKit
-import CoreData
-
 
 class CardsIndexTableViewController: UITableViewController {
-    
     private var cards: [Card] = []
     private var cardPages: [CardsPage] = []
     private var selectedCard: Card?
@@ -29,7 +26,7 @@ class CardsIndexTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    // method injecting card  to DetailsView
+    // method injecting card to DetailsView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CardDetailsSegue" {
             if let vc = segue.destination as? CardDetailsViewController {
@@ -37,35 +34,13 @@ class CardsIndexTableViewController: UITableViewController {
             }
         }
     }
-    
-    func fetchFromApi(isInitialFetch: Bool = false) {
-        let pageNumber = (totalItems / customPageSize) + 1
-        
-        let apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)")
-        var request = URLRequest(url: apiUrlAllCards!)
-        request.httpMethod = "GET"
-        request.addValue("Bearer USb9M27894qSS1h81NmzDsW9wKE7ckq11H", forHTTPHeaderField: "Authorization")
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            do {
-             let cardPage = try JSONDecoder().decode(CardsPage.self, from: data!)
-                //TODO: think over this solution - is it good
-                DispatchQueue.main.async {
-                    self.cardPages.append(cardPage)
-                    self.cards.append(contentsOf: cardPage.cards)
-                    self.tableView.reloadData()
-                }
-            } catch let err {
-                print(err)
-                print(err.localizedDescription)
-                print("error")
-            }
-        })
-        
-        task.resume()
-    }
 }
+
+
+
+
+// MARK: Extensions
+
 
 // extension UITableViewController delegate methods
 extension CardsIndexTableViewController {
@@ -103,5 +78,29 @@ extension CardsIndexTableViewController {
         self.selectedCard = self.cards[indexPath.row]
         
         performSegue(withIdentifier: "CardDetailsSegue", sender: self)
+    }
+}
+
+// "network" function fetching from API cards
+extension CardsIndexTableViewController {
+    private func fetchFromApi() {
+        let pageNumber = (totalItems / customPageSize) + 1
+        let apiUrlAllCards = "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)"
+        
+        NetworkManager.fetchFromApi(withURL: apiUrlAllCards) { data, response, error -> Void in
+            do {
+                let cardPage = try JSONDecoder().decode(CardsPage.self, from: data!)
+                //TODO: think over this solution - is it good
+                DispatchQueue.main.async {
+                    self.cardPages.append(cardPage)
+                    self.cards.append(contentsOf: cardPage.cards)
+                    self.tableView.reloadData()
+                }
+            } catch let err {
+                print(err)
+                print(err.localizedDescription)
+                print("error")
+            }
+        }
     }
 }
