@@ -11,8 +11,16 @@ import UIKit
 class CardDetailsViewController: UIViewController {
     
     var card: Card?
-
+    @IBOutlet weak var cardImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayCardImage()
+    }
+    
+    private func displayCardImage() {
+        if let card = card, let url = card.image["pl_PL"] {
+            cardImageView.imageWithUrlString(link: url)
+        }
     }
 }

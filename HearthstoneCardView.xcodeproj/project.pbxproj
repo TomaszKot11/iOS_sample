@@ -14,6 +14,7 @@
 		4010AFC022F8C93C00CF73C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4010AFBE22F8C93C00CF73C6 /* LaunchScreen.storyboard */; };
 		4010AFC922F8E1C200CF73C6 /* CardsIndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */; };
 		4026CEEC2316A0870060C026 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */; };
+		40698368231A9C5400E1DA51 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40698367231A9C5400E1DA51 /* UIImageView.swift */; };
 		406E726322FABC1800B8D775 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726222FABC1800B8D775 /* Card.swift */; };
 		406E726522FABF1200B8D775 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E726422FABF1200B8D775 /* Metadata.swift */; };
 		406FF9F922FF198D0059A802 /* MetdataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406FF9F822FF198D0059A802 /* MetdataService.swift */; };
@@ -30,6 +31,7 @@
 		4010AFC122F8C93C00CF73C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4010AFC822F8E1C200CF73C6 /* CardsIndexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsIndexTableViewController.swift; sourceTree = "<group>"; };
 		4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		40698367231A9C5400E1DA51 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		406E726222FABC1800B8D775 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		406E726422FABF1200B8D775 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		406FF9F822FF198D0059A802 /* MetdataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetdataService.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		4010AFB422F8C93000CF73C6 /* HearthstoneCardView */ = {
 			isa = PBXGroup;
 			children = (
+				40698366231A9C3A00E1DA51 /* Extensions */,
 				4082C49C231A7DF7004D7799 /* StoryboardViewControllers */,
 				4026CEE923169EBB0060C026 /* Views */,
 				406FF9F722FF16C00059A802 /* Models */,
@@ -94,6 +97,14 @@
 				4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		40698366231A9C3A00E1DA51 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40698367231A9C5400E1DA51 /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		406FF9F722FF16C00059A802 /* Models */ = {
@@ -186,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4010AFB822F8C93000CF73C6 /* ViewController.swift in Sources */,
+				40698368231A9C5400E1DA51 /* UIImageView.swift in Sources */,
 				4010AFB622F8C93000CF73C6 /* AppDelegate.swift in Sources */,
 				4026CEEC2316A0870060C026 /* CustomTableViewCell.swift in Sources */,
 				406E726322FABC1800B8D775 /* Card.swift in Sources */,
