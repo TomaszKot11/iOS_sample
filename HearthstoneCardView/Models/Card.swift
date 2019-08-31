@@ -8,6 +8,7 @@
 
 import Foundation
 
+// to deserialize single Card JSON object
 struct Card: Codable {
     let id: Int
     let manaCost: Int?
@@ -43,6 +44,7 @@ struct Card: Codable {
     }
 }
 
+// to deserialize CardsPage JSON object
 struct CardsPage: Codable {
     let cardCount: Int
     let cards: [Card]

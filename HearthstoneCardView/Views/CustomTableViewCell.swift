@@ -45,7 +45,7 @@ class CustomTableViewCell: UITableViewCell {
 
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Helvetica", size: 15.0)
+        label.font = UIFont(name: "Helvetica-Bold", size: 25.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,14 +53,14 @@ class CustomTableViewCell: UITableViewCell {
     let classLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Helvetica", size: 12.0)
+        label.font = UIFont(name: "Helvetica", size: 20.0)
         return label
     }()
     
     let rarityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Helvetica", size: 10.0)
+        label.font = UIFont(name: "Helvetica", size: 15.0)
         return label
     }()
 

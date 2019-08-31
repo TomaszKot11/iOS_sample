@@ -18,6 +18,7 @@ class CardDetailsViewController: UIViewController {
         displayCardImage()
     }
     
+    //MARK: private methods
     private func displayCardImage() {
         if let card = card, let url = card.image["pl_PL"] {
             cardImageView.imageWithUrlString(link: url)

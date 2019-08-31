@@ -10,59 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthstoneCardView/Services/MetdataService.swift"
-            timestampString = "588950665.591401"
+            timestampString = "588957013.064643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "queryApiForMetadata()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static HearthstoneCardView.MetadataService.queryApiForMetadata() -&gt; ()"
-                  moduleName = "HearthstoneCardView"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomek/Desktop/binarapps_ios/HearthstoneCardView/HearthstoneCardView/Services/MetdataService.swift"
-                  timestampString = "588684593.1504281"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "942">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static HearthstoneCardView.MetadataService.queryApiForMetadata() -&gt; ()"
-                  moduleName = "HearthstoneCardView"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomek/Desktop/binarapps_ios/HearthstoneCardView/HearthstoneCardView/Services/MetdataService.swift"
-                  timestampString = "588684593.152433"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "71">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthstoneCardView/Services/MetdataService.swift"
-            timestampString = "588950665.5914609"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "queryApiForMetadata()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,76 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthstoneCardView/Services/MetdataService.swift"
-            timestampString = "588950665.5914969"
+            timestampString = "588957013.0647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "queryApiForMetadata()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthstoneCardView/Services/MetdataService.swift"
-            timestampString = "588950665.59153"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "queryApiForMetadata()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static HearthstoneCardView.MetadataService.queryApiForMetadata() -&gt; ()"
-                  moduleName = "HearthstoneCardView"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomek/Desktop/binarapps_ios/HearthstoneCardView/HearthstoneCardView/Services/MetdataService.swift"
-                  timestampString = "588684639.839269"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "729">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static HearthstoneCardView.MetadataService.queryApiForMetadata() -&gt; ()"
-                  moduleName = "HearthstoneCardView"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomek/Desktop/binarapps_ios/HearthstoneCardView/HearthstoneCardView/Services/MetdataService.swift"
-                  timestampString = "588684639.840413"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "1277">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static HearthstoneCardView.MetadataService.queryApiForMetadata() -&gt; ()"
-                  moduleName = "HearthstoneCardView"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomek/Desktop/binarapps_ios/HearthstoneCardView/HearthstoneCardView/Services/MetdataService.swift"
-                  timestampString = "588684639.841548"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "1344">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -169,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthstoneCardView/StoryboardViewControllers/CardsIndexTableViewController.swift"
-            timestampString = "588950665.591575"
+            timestampString = "588957013.06477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -185,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthstoneCardView/StoryboardViewControllers/CardsIndexTableViewController.swift"
-            timestampString = "588950665.591604"
+            timestampString = "588957013.064814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -201,28 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HearthstoneCardView/StoryboardViewControllers/CardsIndexTableViewController.swift"
-            timestampString = "588950665.591632"
+            timestampString = "588957013.064853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HearthstoneCardView/StoryboardViewControllers/CardsIndexTableViewController.swift"
-            timestampString = "588950665.5916589"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -31,7 +31,7 @@ class MetadataService {
     }
     
     public static func queryApiForMetadata() {
-        var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/metadata")
+        let apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/metadata")
         var request = URLRequest(url: apiUrlAllCards!)
         request.httpMethod = "GET"
         request.addValue("Bearer USb9M27894qSS1h81NmzDsW9wKE7ckq11H", forHTTPHeaderField: "Authorization")
@@ -41,12 +41,8 @@ class MetadataService {
         //TODO: use codable?
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
-                // HTTP 200 status
-                //TODO: parse data
                 let metadata = try JSONDecoder().decode(Metadata.self, from: data!)
-    
                 MetadataService.metadata = metadata
-                
             } catch let jsonErr {
                 print("Error occured while parsing the JSON response:")
                 print(jsonErr)
@@ -66,7 +62,7 @@ extension MetadataService {
         case "Rare":
             return UIColor.blue
         case "Common":
-            return UIColor.white
+            return UIColor.gray
         case "Legendary":
             return UIColor.orange
         default:

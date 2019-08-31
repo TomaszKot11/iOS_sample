@@ -29,6 +29,46 @@ class CardsIndexTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    // method injecting card  to DetailsView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CardDetailsSegue" {
+            if let vc = segue.destination as? CardDetailsViewController {
+                vc.card = selectedCard
+            }
+        }
+    }
+    
+    func fetchFromApi(isInitialFetch: Bool = false) {
+        let pageNumber = (totalItems / customPageSize) + 1
+        
+        let apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)")
+        var request = URLRequest(url: apiUrlAllCards!)
+        request.httpMethod = "GET"
+        request.addValue("Bearer USb9M27894qSS1h81NmzDsW9wKE7ckq11H", forHTTPHeaderField: "Authorization")
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+             let cardPage = try JSONDecoder().decode(CardsPage.self, from: data!)
+                //TODO: think over this solution - is it good
+                DispatchQueue.main.async {
+                    self.cardPages.append(cardPage)
+                    self.cards.append(contentsOf: cardPage.cards)
+                    self.tableView.reloadData()
+                }
+            } catch let err {
+                print(err)
+                print(err.localizedDescription)
+                print("error")
+            }
+        })
+        
+        task.resume()
+    }
+}
+
+// extension UITableViewController delegate methods
+extension CardsIndexTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,11 +89,11 @@ class CardsIndexTableViewController: UITableViewController {
         
         return cell!
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
     }
@@ -63,51 +103,5 @@ class CardsIndexTableViewController: UITableViewController {
         self.selectedCard = self.cards[indexPath.row]
         
         performSegue(withIdentifier: "CardDetailsSegue", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CardDetailsSegue" {
-            if let vc = segue.destination as? CardDetailsViewController {
-                vc.card = selectedCard
-            }
-        }
-    }
-    
-    func fetchFromApi(isInitialFetch: Bool = false) {
-        var pageNumber = (totalItems / customPageSize) + 1
-        
-        var apiUrlAllCards = URL(string: "https://us.api.blizzard.com/hearthstone/cards?pageSize=\(customPageSize)&page=\(pageNumber)")
-        var request = URLRequest(url: apiUrlAllCards!)
-        request.httpMethod = "GET"
-        request.addValue("Bearer USb9M27894qSS1h81NmzDsW9wKE7ckq11H", forHTTPHeaderField: "Authorization")
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            do {
-                
-            let jsonOne = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
-                
-                for _ in 1...5 {
-                    print("elo")
-                    print(jsonOne)
-                    print("elo")
-                }
-                
-                
-             let cardPage = try JSONDecoder().decode(CardsPage.self, from: data!)
-                //TODO: think over this solution - is it good
-                DispatchQueue.main.async {
-                    self.cardPages.append(cardPage)
-                    self.cards.append(contentsOf: cardPage.cards)
-                    self.tableView.reloadData()
-                }
-            } catch let err {
-                print(err)
-                print(err.localizedDescription)
-                print("error")
-            }
-        })
-        
-        task.resume()
     }
 }

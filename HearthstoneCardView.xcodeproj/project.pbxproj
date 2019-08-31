@@ -68,6 +68,7 @@
 		4010AFB422F8C93000CF73C6 /* HearthstoneCardView */ = {
 			isa = PBXGroup;
 			children = (
+				402ECA03231AC4C6006A473A /* Networking */,
 				40698366231A9C3A00E1DA51 /* Extensions */,
 				4082C49C231A7DF7004D7799 /* StoryboardViewControllers */,
 				4026CEE923169EBB0060C026 /* Views */,
@@ -97,6 +98,13 @@
 				4026CEEA2316A0870060C026 /* CustomTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		402ECA03231AC4C6006A473A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		40698366231A9C3A00E1DA51 /* Extensions */ = {

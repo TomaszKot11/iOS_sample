@@ -14,13 +14,6 @@ struct CardClass: Codable {
     let slug: String
     let name: [String: String]
     
-    private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case slug = "slug"
-        case name = "name"
-    }
-    
-    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         slug = try container.decode(String.self, forKey: .slug)
@@ -37,22 +30,11 @@ struct Rarity: Codable {
     let id: Int
     let slug: String
     let name: [String: String]
-    
-    private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case slug = "slug"
-        case name = "name"
-    }
 }
 
 struct Metadata: Codable {
     let rarities: [Rarity]
     let classes: [CardClass]
-    
-    private enum CodingKeys: String, CodingKey {
-        case rarities = "rarities"
-        case classes = "classes"
-    }
 }
 
 
