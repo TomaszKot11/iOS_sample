@@ -13,15 +13,15 @@ import CoreData
 
 class CardsIndexTableViewController: UITableViewController {
     
-    var cards: [Card] = []
-    var cardPages: [CardsPage] = []
-    var selectedCard: Card?
-    var totalItems: Int {
+    private var cards: [Card] = []
+    private var cardPages: [CardsPage] = []
+    private var selectedCard: Card?
+    private var totalItems: Int {
         get {
             return cards.count
         }
     }
-    let customPageSize: Int = 20
+    private let customPageSize: Int = 20
     
     override func viewDidLoad() {
         MetadataService.queryApiForMetadata()

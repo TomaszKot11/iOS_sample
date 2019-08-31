@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// As far as I managed to know such classes are antipattern in iOS world? ;>
 class MetadataService {
    public static var metadata: Metadata?
     
@@ -36,9 +37,7 @@ class MetadataService {
         request.httpMethod = "GET"
         request.addValue("Bearer USb9M27894qSS1h81NmzDsW9wKE7ckq11H", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
-    
-        //TODO: handle parsing exceptions?
-        //TODO: use codable?
+
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 let metadata = try JSONDecoder().decode(Metadata.self, from: data!)
@@ -54,6 +53,7 @@ class MetadataService {
 }
 
 
+// returns color for giver Rarity string
 extension MetadataService {
     private static func getColorForRarityName(rarityName: String?) -> UIColor? {
         switch(rarityName) {

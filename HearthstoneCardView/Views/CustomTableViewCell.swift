@@ -9,6 +9,7 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
+    // this could be a separate subview
     let mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.spacing = 4
