@@ -14,6 +14,7 @@ struct Card: Codable {
     let name: [String: String]
     let classId: String
     let cardTypeId: Int
+    let rarityId: Int
     let image: [String: String]
     
     private enum CodingKeys: String, CodingKey {
@@ -23,6 +24,7 @@ struct Card: Codable {
         case classId = "classId"
         case cardTypeId = "cardTypeId"
         case image = "image"
+        case rarityId = "rarityId"
     }
     
     init(from decoder: Decoder) throws {
@@ -32,6 +34,7 @@ struct Card: Codable {
         name = try container.decode([String: String].self, forKey: .name)
         cardTypeId = try container.decode(Int.self, forKey: .cardTypeId)
         image = try container.decode([String: String].self, forKey: .image)
+        rarityId = try container.decode(Int.self, forKey: .rarityId)
         if let value = try? container.decode(Int.self, forKey: .classId) {
             classId = String(value)
         } else {
@@ -45,11 +48,4 @@ struct CardsPage: Codable {
     let cards: [Card]
     let page: Int
     let pageCount: Int
-    
-    private enum CodingKeys: String, CodingKey {
-        case cardCount = "cardCount"
-        case cards = "cards"
-        case page = "page"
-        case pageCount = "pageCount"
-    }
 }

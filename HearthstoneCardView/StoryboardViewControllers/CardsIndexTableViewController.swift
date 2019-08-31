@@ -24,7 +24,7 @@ class CardsIndexTableViewController: UITableViewController {
     let customPageSize: Int = 20
     
     override func viewDidLoad() {
-        // initial fetch from API
+        MetadataService.queryApiForMetadata()
         fetchFromApi()
         super.viewDidLoad()
     }
@@ -73,7 +73,6 @@ class CardsIndexTableViewController: UITableViewController {
         }
     }
     
-    
     func fetchFromApi(isInitialFetch: Bool = false) {
         var pageNumber = (totalItems / customPageSize) + 1
         
@@ -87,6 +86,13 @@ class CardsIndexTableViewController: UITableViewController {
             do {
                 
             let jsonOne = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+                
+                for _ in 1...5 {
+                    print("elo")
+                    print(jsonOne)
+                    print("elo")
+                }
+                
                 
              let cardPage = try JSONDecoder().decode(CardsPage.self, from: data!)
                 //TODO: think over this solution - is it good

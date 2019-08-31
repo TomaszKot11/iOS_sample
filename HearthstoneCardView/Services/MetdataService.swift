@@ -7,21 +7,17 @@
 //
 
 import Foundation
-
+import UIKit
 
 class MetadataService {
-     public static var metadata: Metadata?
+   public static var metadata: Metadata?
     
-    
-    public static func getRarityNameFor(id rarityId: Int) -> String? {
-        if let rarities = metadata?.rarities {
-            
-            let rarity: Rarity? = rarities.first(where: { $0.id == rarityId })
-           
-            return rarity?.name["pl_PL"]
+    public static func getRarityNameAndColorFor(id rarityId: Int) -> (name: String?, color: UIColor?) {
+        if let rarities = metadata?.rarities, let rarity = rarities.first(where: { $0.id == rarityId }) {
+            return (rarity.name["pl_PL"], getColorForRarityName(rarityName: rarity.name["en_US"]))
         }
         
-        return nil
+        return (nil, nil)
     }
     
     public static func getClassNameFor(id classId: String) -> String? {
@@ -58,5 +54,23 @@ class MetadataService {
         })
     
         task.resume()
+    }
+}
+
+
+extension MetadataService {
+    private static func getColorForRarityName(rarityName: String?) -> UIColor? {
+        switch(rarityName) {
+        case "Epic":
+            return UIColor.purple
+        case "Rare":
+            return UIColor.blue
+        case "Common":
+            return UIColor.white
+        case "Legendary":
+            return UIColor.orange
+        default:
+            return nil
+        }
     }
 }

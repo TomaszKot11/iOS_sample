@@ -80,8 +80,11 @@ class CustomTableViewCell: UITableViewCell {
             manaLabel.text = "\(manaCost)"
         }
         nameLabel.text = card.name["pl_PL"]
-        classLabel.text = card.classId
-        rarityLabel.text = "\(card.cardTypeId)"
+        classLabel.text = MetadataService.getClassNameFor(id: card.classId)
+        let rarityTuple = MetadataService.getRarityNameAndColorFor(id: card.rarityId)
+        
+        rarityLabel.text = rarityTuple.name
+        rarityLabel.textColor = rarityTuple.color
     }
     
     //MARK: private methods
